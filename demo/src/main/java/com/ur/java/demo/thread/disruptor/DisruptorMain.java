@@ -28,7 +28,8 @@ public class DisruptorMain {
         // 8.创建生产者
         DisruptorProducer producer = new DisruptorProducer(ringBuffer);
         ByteBuffer byteBuffer = ByteBuffer.allocate(8);
-        for(int i=0; i<100; i++){
+        for (int i = 0; i < 1000000000
+                ; i++) {
             byteBuffer.putLong(0, i);
             producer.onData(byteBuffer);
         }
